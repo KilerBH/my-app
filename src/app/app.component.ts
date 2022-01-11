@@ -23,6 +23,7 @@ export class AppComponent {
             .subscribe(
                 (c) => {
                     console.log('function next', this.service.counter);
+                    this.result = c;
                     this.isLoading = false;
                 },
                 (e) => {
