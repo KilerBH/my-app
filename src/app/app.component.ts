@@ -17,21 +17,21 @@ export class AppComponent {
     }
 
     test() {
-        console.log('function start');
+        console.log('function start', this.service.counter);
         this.isLoading = true;
         this.service.someHeavyJob()
             .subscribe(
                 (c) => {
-                    console.log('function next');
+                    console.log('function next', this.service.counter);
                     this.isLoading = false;
                 },
                 (e) => {
-                    console.log('function error');
+                    console.log('function error', this.service.counter);
                     this.isLoading = false;
                     console.log(e);
                 },
             );
-        console.log('function return');
+        console.log('function return', this.service.counter);
         this.result = this.service.counter;
     }
 }
